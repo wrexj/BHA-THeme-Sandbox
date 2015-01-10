@@ -1,7 +1,10 @@
 /* ===================================================================================
    This is the tablet and desktop stylesheet. It applies to viewports above 768px.
    For the mobile first stylesheet which applies to all screen widths, see theme.scss.
-   =================================================================================== */
+ 
+DJM - Added BCH-Grey color to features
+
+=================================================================================== */
 
 //* style variables *//
 
@@ -159,17 +162,17 @@ footer {
 // top nav with drop downs
 /*
 .inner-page {
-	.tablet-visible + .desktop-visible {
-		position: absolute;
-		left: 0;
-		width: 100%;
-		margin-top: -20px;
-		background: black;
-		#subnav-container {
-			width: 1026px;
-			margin: 0 auto;
-		}
-	}
+  .tablet-visible + .desktop-visible {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    margin-top: -20px;
+    background: black;
+    #subnav-container {
+      width: 1026px;
+      margin: 0 auto;
+    }
+  }
 }
 */
 
@@ -208,8 +211,8 @@ nav, .subnav {
       padding: 0 10px;
       font-size: 16px;
       .icon-angle-down {
-				display: none;
-			}
+        display: none;
+      }
     }
     &:last-child {
       margin-right: 0;
@@ -400,6 +403,8 @@ ul.membership-list {
   .features-headline {
     font-size: 20px;
     padding: 15px;
+    /* DJM Added Color */
+    color: $bch-grey3;
   }
 }
 
@@ -414,10 +419,10 @@ ul.membership-list {
   border: none;
   background: transparent;
   &:before {
-	  content: " ";
-	  height: 74px;
-	  width: 34px;
-	  background: url('arrow-left.png') no-repeat; 
+    content: " ";
+    height: 74px;
+    width: 34px;
+    background: url('arrow-left.png') no-repeat; 
   }
 }
 
@@ -428,10 +433,10 @@ ul.membership-list {
   border: none;
   background: transparent;
   &:before {
-	  content: " ";
-	  height: 74px;
-	  width: 34px;
-	  background: url('arrow-right.png') no-repeat; 
+    content: " ";
+    height: 74px;
+    width: 34px;
+    background: url('arrow-right.png') no-repeat; 
   }
 }
 

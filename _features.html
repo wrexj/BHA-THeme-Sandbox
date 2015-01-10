@@ -1,6 +1,10 @@
+<!-- DJM - Hard Coded Featured Image Sliders to 960*640 -->
+
 {% if page.features_count > 0 %}
 
 {% if page.features.size > 0 %}
+
+
 
 {% assign first_feature_height = page.features.first.image_height %}
 {% if page.features.size == 1 %}
@@ -12,7 +16,10 @@
 
   {% for feature in page.features %}
   <a href="{{ feature.page.url }}" class="single-feature">
-    <img src="{{ feature.image_url }}" height="{{ feature.image_height }}" width="{{ feature.image_width }}"/>
+    <!-- DJM  Start Hardcode Image Size -->
+    <!-- <img src="{{ feature.image_url }}" height="{{ feature.image_height }}" width="{{ feature.image_width }}"/> -->
+    <img src="{{ feature.image_url }}" height="256" width="1024"/>
+
   </a>
   {% if feature.headline.size > 0 %}
     <a class="features-headline" href="{{ feature.page.url }}">{{ feature.headline }}</a>
@@ -28,7 +35,11 @@
       {% for feature in page.features %}
       <li>
         <a href="{{ feature.page.url }}">
-          <img src="{{ feature.image_url }}" height="{{ feature.image_height }}" width="{{ feature.image_width }}"/>
+          <!-- DJM Start - Hard Coded Image Size -->
+          <img src="{{ feature.image_url }}" height="1024" width="256"/>
+
+          <!-- <img src="{{ feature.image_url }}" height="{{ feature.image_height }}" width="{{ feature.image_width }}"/> -->
+
         </a>
         {% if feature.headline.size > 0 %}
         <a class="features-headline" href="{{ feature.page.url }}">{{ feature.headline }}</a>

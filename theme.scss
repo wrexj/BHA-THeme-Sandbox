@@ -1,7 +1,12 @@
 /* ============================================================================
    This is a mobile first stylesheet and it applies to all screen widths.
    For changes to the desktop or tablet viewports, see tablet-and-desktop.scss.
+
+DJM - Modified features.headline
+
+
    ============================================================================ */
+
 
 //* style variables *//
 
@@ -1650,6 +1655,19 @@ h4.expander-head {
     }
   }
   .features-headline {
+  padding: 10px;
+  position: absolute;
+  bottom: 38px;
+  left: 0;
+  color: #fff;
+  width: 55.62%;
+  text-transform: uppercase;
+  font-family: "Oswald",sans-serif;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0,0,0,.4);
+  background: #000;
+  
+/*  DJM Replaced this code with the code above...
     position: absolute;
     left: 0;
     bottom: 0;
@@ -1660,7 +1678,9 @@ h4.expander-head {
     color: #fff;
     padding: 5px;
     display: block;
-    color: #fff;
+    color: #fff; 
+    */
+    
     /* Fallback for web browsers that doesn't support RGBa */
     background: rgb(0, 0, 0) transparent;
     /* RGBa with 0.6 opacity */
