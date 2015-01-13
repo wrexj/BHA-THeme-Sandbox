@@ -1,25 +1,31 @@
 /* ============================================================================
+
+BHA Sandbox
+Theme.scss
+
+
+
    This is a mobile first stylesheet and it applies to all screen widths.
    For changes to the desktop or tablet viewports, see tablet-and-desktop.scss.
 
 DJM - Modified features.headline
+DJM - Pasted Colors from Publisher theme
 
 
    ============================================================================ */
 
 
-//* style variables *//
+/* style variables */
 
 // headline font
-$headline-font: 'Montserrat', Helvetica, sans-serif;
+$headline-font: "Bree Serif", serif;
+$title-font-weight: 700;
+$headline-font-alt: "Bree Serif", sans-serif;
 
 // main font
-$font: 'Montserrat', sans-serif;
+$font: "Lato", sans-serif;
 
-$theme-color-1: #b85812;
-$theme-color-2: #e0d6c8;
-$theme-color-3: #cc6633;
-$theme-color-4: #516e16;
+
 
 // form input area focus color
 $theme-color-5: rgba(123, 163, 41, 0.6);
@@ -28,17 +34,83 @@ $theme-color-5: rgba(123, 163, 41, 0.6);
 $red: #b94a48;
 $green: #619114;
 
-$header-color: #628221;
+$brown: #766341;
+$burgundy: #601B28;
+$orange: #c63;
+$turquoise: #3A6F8F;
+$tan: #d4c89e;
+$grey: #ccc;
+$ltgrey: #f2f2f2;
+$charcoal: #656565;
+$orange: #c63;
+$red: #5C8726;
+$green: #5C8726;
+$bhagreen: #708770;
+$black: #000;
+$white: #fff;
 
+$facebook: #3b5998;
+$twitter: #00aced;
+
+$header-color: #fff;
+$header-text-color: #000;
+
+$site-bg: #6E9BC5;
+$site-color: $white;
+$desktop-site-bg: #6E9BC5;
+$desktop-site-color: $white;
 
 // custom colors
-$bch-orange: #cc6633;
-$bch-grey: #343434;
-$bch-grey2: #403f3f;
-$bch-grey3: #f2f2f2;
-$bch-maroon: #601b28;
+$theme-color-1: $bhagreen;
+$theme-color-2: $black;
+$theme-color-3: $tan;
+$theme-color-4: $site-bg;
 
 
+
+
+$onecolumn-bg: white;
+$twocolumn-color: #000;
+$footer-bg: $charcoal;
+$headline-weight: 500;
+$check_radio_sheet: url(check_radio_sheet_navy.png);
+$progress: #ffa38a;
+$headline-transform: none;
+$opaque-bg-rgb: rgb(212, 200, 158);
+$opaque-bg-rgba: rgba(212, 200, 158, 0.8);
+$share-bar-bg: transparent;
+$icon-button-bg: $grey;
+$icon-button-border: 2px solid #f93c04;
+$icon-button-color: #fff;
+$byline-image-border: $orange;
+$delete: $orange;
+$delete-border: 2px solid $orange;
+$follow: #d4c89e;
+$follow-color: $grey;
+$follow-border: 2px solid #000;
+
+//Featured Content Slider
+$flex-color: $white;
+$flex-background: transparent;
+$features-headline-color: $white;
+
+//Supporter Nav Buttons
+$supporter-nav-button-one: $bhagreen;
+$supporter-nav-color-one: $white;
+$supporter-nav-button-two: $burgundy;
+$supporter-nav-color-two: $white;
+$supporter-nav-button-three: $tan;
+$supporter-nav-color-three: $white;
+$feature-border: 0;
+$supporter-nav-button-border: 0;
+$theme-color-5: rgba(141, 207, 215, 0.6);
+
+@mixin transparent-bg(){
+  background: $opaque-bg-rgb;
+    background: $opaque-bg-rgba;
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#CCFFFFFF, endColorstr=#CCFFFFFF);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#CCFFFFFF, endColorstr=#CCFFFFFF)";
+}
 
 //* main responsive components *//
 
@@ -148,7 +220,7 @@ h6 {
 // general link styles
 
 a {
-  color: $bch-orange;
+  color: $theme-color-1;
   text-decoration: none;
   outline: none;
 }
@@ -232,7 +304,7 @@ body {
 .activation-message {
   font-weight: bold;
   font-size: 18px;
-  color: $bch-orange;
+  color: $theme-color-1;
 }
 
 // style an image with rounded corners
@@ -336,23 +408,24 @@ body {
 
 header {
   float: left;
-  padding: 28px 0 0 0;
+  padding: 28px 0 25px 15px;
   max-width: 78%;
 }
 
 // if the site has a logo, center it it above content in mobile view
 
 .site-logo {
-  margin-top: 25px;
   header {
     float: none;
     text-align: center;
     padding: 0;
     max-width: 100%;
-    margin-left: -65px; // sets logo to true center
+//    margin-left: -65px; // sets logo to true center
     img {
-      max-width: 155px;
+     max-width: 225px;
       max-height: 100px;
+      position: relative;
+      left: -50%;
     }
   }
 }
@@ -460,7 +533,7 @@ nav {
     @include border-radius-bottom-left(5px);
     font-size: 11px;
     line-height: 20px;
-    background-color: $bch-orange;
+    background-color: $theme-color-1;
     color: white;
     padding: 0;
     border: 0;
@@ -545,7 +618,7 @@ nav {
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     -webkit-appearance: none;
-    width: 73%; 
+    width: 73%;
     @include border-radius-top-right(0px);
     @include border-radius-bottom-right(0px);
     border-right: 0;
@@ -630,7 +703,7 @@ ul#page-stream {
   li.activity  {
     span + a {
     display: block;
-    } 
+    }
   }
   .activity-time {
     display: block;
@@ -725,7 +798,7 @@ ul#page-stream {
     padding: 15px;
     margin-bottom: 15px;
     @include border-radius(2px);
-    border-bottom: 2px solid $bch-orange;
+    border-bottom: 2px solid $theme-color-1;
 
     &:last-child {
       margin-bottom: 0;
@@ -795,7 +868,7 @@ ul#page-stream {
 
 .header-container {
   padding-bottom: 40px;
-  min-height: 140px;
+  min-height: 80px;
 }
 
 // site wide footer
@@ -840,7 +913,7 @@ footer {
       color: darken($theme-color-1, 10);
     }
     &.on {
-      border-left: 3px solid $bch-orange;
+      border-left: 3px solid $theme-color-1;
     }
     &:first-child {
       @include border-radius-top-left(5px);
@@ -852,7 +925,7 @@ footer {
       @include border-radius-bottom-right(5px);
     }
     &:hover {
-      border-left: 3px solid $bch-orange;
+      border-left: 3px solid $theme-color-1;
     }
     a {
       padding: 15px 15px;
@@ -862,13 +935,41 @@ footer {
 }
 
 .supporter-nav-button {
-  margin: 5px 0;
+  margin: 10px 0;
   text-align: center;
   font-size: 18px;
   width: 100%;
   line-height: 30px;
-  @include border-radius(1px);
+  padding: 20px;
+  background-color: $supporter-nav-button-one;
+  color: $supporter-nav-color-one;
+  border-bottom: $supporter-nav-button-border;
+  &:nth-child(2){
+    background-color: $supporter-nav-button-two;
+    color: $supporter-nav-color-two;
+    &:hover {
+      @if lightness($icon-button-color) > 50% {
+        background-color: darken($theme-color-1, 5);
+      }
+      @else {
+        background-color: lighten($theme-color-1, 5);
+      }
+    }
+  }
+  &:nth-child(3){
+    background-color: $supporter-nav-button-three;
+    color: $supporter-nav-color-three;
+    &:hover {
+      @if lightness($icon-button-color) > 50% {
+        background-color: darken($theme-color-1, 5);
+      }
+      @else {
+        background-color: lighten($theme-color-1, 5);
+      }
+    }
+  }
 }
+
 
 // rules link shown near comment box
 
@@ -1063,7 +1164,7 @@ small {
     position: absolute;
     bottom: 0;
     left: 0;
-    background-color: $bch-orange;
+    background-color: $theme-color-1;
     font-size: 10px;
     line-height: 17px;
     padding: 0 5px;
@@ -1304,7 +1405,7 @@ ul.membership-list {
     @include border-radius-top-right(5px);
     font-size: 24px;
     font-family: $headline-font;
-    background-color: $bch-orange;
+    background-color: $theme-color-1;
     color: white;
     padding: 15px;
     margin: 0;
@@ -1315,7 +1416,7 @@ ul.membership-list {
     @include border-radius-top-left(0);
     @include border-radius-top-right(0);
     background-color: #f8f8f8;
-    border-bottom: 2px solid $bch-orange;
+    border-bottom: 2px solid $theme-color-1;
     padding: 15px 15px 0 15px;
   }
 }
@@ -1387,7 +1488,7 @@ ul.membership-list {
   margin-top: 15px;
   padding: 15px;
   background-color: #f8f8f8;
-  border-left: 2px solid $bch-orange;
+  border-left: 2px solid $theme-color-1;
 }
 
 // invoice page table
@@ -1615,9 +1716,14 @@ h4.expander-head {
 
 .page-features {
   position: relative;
-  margin: 0 0 50px 0;
-  .single-feature {
+  margin: 35px 0 100px;
+  @include box-shadow(0 0 8px -2px #000);
+  border: $feature-border;
+  .single-feature, .multiple-features {
     display: block;
+    width: 100%;
+    height: 360px;
+    @include background-size(cover !important);
   }
   img {
     width: 100%;
@@ -1642,10 +1748,6 @@ h4.expander-head {
     visibility: hidden;
     a {
       display: block;
-      text-align: center;
-    }
-    img {
-      height: auto;
     }
     li {
       margin: 0;
@@ -1655,41 +1757,27 @@ h4.expander-head {
     }
   }
   .features-headline {
-  padding: 10px;
-  position: absolute;
-  bottom: 0px;
-  left: 0;
-  color: #fff;
-  width: 100%;
-  text-transform: uppercase;
-  font-family: "Oswald",sans-serif;
-  font-weight: bold;
-  text-shadow: 1px 1px 2px rgba(0,0,0,.4);
-  background: transparent;
-
-  
-/*  DJM Replaced this code with the code above...
     position: absolute;
     left: 0;
-    bottom: 0;
+    right: 0;
+    bottom: 20px;
     z-index: 2;
-    background: #333;
-    width: 100%;
-    font-size: 14px;
-    color: #fff;
-    padding: 5px;
+    font-size: 36px;
+    line-height: 40px;
+    text-transform: $headline-transform;
+    color: $features-headline-color;
+    width: 88%;
+    text-align: left;
+    margin: 0px auto;
     display: block;
-    color: #fff; 
-    */
-    
-    /* Fallback for web browsers that doesn't support RGBa */
-    background: rgb(0, 0, 0) transparent;
-    /* RGBa with 0.6 opacity */
-    background: rgba(0, 0, 0, 0.6);
-    /* For IE 5.5 - 7*/
-    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
-    /* For IE 8*/
-    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+    font-family: $headline-font;
+    text-shadow: 0 0 15px #000;
+    em{
+      font-family: $font;
+      font-weight: 500;
+      font-size: 24px;
+      text-transform: none;
+    }
   }
   // If you want labels to display beneath your images, remove display: none; below //
   .flex-control-paging {
@@ -1699,11 +1787,11 @@ h4.expander-head {
     line-height: 40px;
     li {
       display: inline-block;
-      color: black;
+      color: $white;
       margin-right: 5px;
       cursor: pointer;
       a {
-        color: black;
+        color: $white;
         padding: 0 15px;
         display: block;
 
@@ -1714,10 +1802,10 @@ h4.expander-head {
     }
     .flex-active a {
       display: block;
-      color: white;
+      color: $white;
     }
     .flex-active {
-      background-color: $bch-orange;
+      background-color: $theme-color-3;
     }
   }
 }
@@ -1726,9 +1814,9 @@ h4.expander-head {
 
 .flex-direction-nav {
   position: absolute;
-  top: 18%;
   z-index: 9999;
   width: 100%;
+  top: 100%;
   li {
     list-style: none;
     position: absolute;
@@ -1741,28 +1829,25 @@ h4.expander-head {
 }
 
 .flex-prev, .flex-next {
-  display: none; // hids next/prev arrows in mobile viewport
-  position: absolute; top: 41%;
+  display: block;
+  position: absolute;
+  top: 41%;
   z-index: 9999;
-  font-size: 16px;
-  padding: 15px 10px;
-  background: $bch-orange;
-  border: 1px solid darken($bch-orange, 10);
-  color: white;
+  font-size: 36px;
+  padding: 5px;
+  @if lightness($flex-color) == lightness($site-bg) and $flex-background == transparent {
+    color: $site-color;
+  } @else {
+    color: $flex-color;
+  }
 }
 
 .flex-prev {
   left: 0;
-  @include border-radius-top-right(2px);
-  @include border-radius-bottom-right(2px);
-  border-left: 0;
 }
 
 .flex-next {
   right: 0;
-  @include border-radius-top-left(2px);
-  @include border-radius-bottom-left(2px);
-  border-right: 0;
 }
 
 // pagination
@@ -1813,7 +1898,7 @@ ul.homepage_excerpt-list {
   li.excerpt-block {
     list-style: none;
     background: #f8f8f8;
-    border-bottom: 2px solid $bch-orange;
+    border-bottom: 2px solid $theme-color-1;
     @include border-radius(2px);
     margin-bottom: 15px;
     padding: 25px 25px;
@@ -1831,7 +1916,7 @@ ul.homepage_excerpt-list {
     }
     .progress {
       margin-bottom: 0;
-    } 
+    }
     ul.question-list {
       margin: 15px 0 0 15px;
       border: none;
@@ -1879,10 +1964,15 @@ ul.homepage_excerpt-list {
 // CUSTOM CSS
 ////////////
 
+//DJM Center the topnav menu
+ul#topnav { float: none; text-align: center;}
+
+ul#topnav li { float: none; display: inline-block; }
+
 
 // general
 body {
-	background: $bch-grey3;
+	background: $theme-color-4;
 }
 .content {
 	clear: both;
@@ -1890,22 +1980,22 @@ body {
 
 // span colors
 .orange {
-	color: $bch-orange;
+	color: $theme-color-1;
 }
 
 
 //header container
 .header-container {
-	background: url("cartographer.jpg") repeat-x $bch-grey;
-	padding-bottom: 0;
+//	background: url("cartographer.jpg") repeat-x $theme-color-2;
+ 	padding-bottom: 0;
 }
 
 
 // top most bar
 .welcome-bar {
 	width: 100%;
-	min-height: 35px; 
-	background: $bch-maroon;
+	min-height: 35px;
+	background: $burgundy;
 	.slogan {
 		float: left;
 		color: white;
@@ -1916,7 +2006,7 @@ body {
 		display: inline-block;
 		max-width: 75%;
 		float: right;
-		background: $bch-maroon;
+		background: $burgundy;
 		padding: 7px 15px 2px 15px;
 		border-bottom-left-radius: 4px;
 		border-bottom-right-radius: 4px;
@@ -2032,7 +2122,7 @@ nav {
 // features bg & header image bg
 .features,
 .header-image {
-	background: url("features-bg.jpg") $bch-grey;
+	background: url("features-bg.jpg") $theme-color-2;
 	background-size: cover;
 	background-repeat: no-repeat;
 }
@@ -2040,7 +2130,7 @@ nav {
 
 //about section homepage
 .about {
-	background: url("cartographer.jpg") repeat-x $bch-grey;
+	background: url("cartographer.jpg") repeat-x $theme-color-2;
 	padding: 10px 0;
 	p {
 		color: white;
@@ -2055,13 +2145,13 @@ nav {
 		.button {
 			font-size: 18px;
 			font-weight: 300;
-			background-color: $bch-orange;
+			background-color: $theme-color-1;
 			border-radius: 0;
 			padding: 15px 35px;
 			margin: 5px 0;
 			margin-right: 25px;
 			&:hover {
-				background-color: lighten($bch-orange, 10%);
+				background-color: lighten($theme-color-1, 10%);
 			}
 		}
 	}
@@ -2072,7 +2162,7 @@ nav {
 .home-headline {
 	h1 {
 		text-align: center;
-		color: $bch-orange;
+		color: $theme-color-1;
 		padding: 50px 0;
 		text-transform: uppercase;
 		font-size: 34px;
@@ -2086,7 +2176,7 @@ nav {
 		margin-top: 54px;
 	}
 	.twocolumn-container .left-column {
-		padding: 20px 10px; 
+		padding: 20px 10px;
 	}
 }
 .social-side {
@@ -2111,7 +2201,7 @@ nav {
 	}
 }
 .blog-post {
-	background: $bch-grey3;
+	background: $theme-color-4;
 	max-width: 31.3%;
 	min-height: 415px;
 	float: left;
@@ -2146,12 +2236,12 @@ nav {
 		a {
 			text-transform: uppercase;
 			color: white;
-			background: $bch-orange;
+			background: $theme-color-1;
 			padding: 4px;
 			margin-left: 2px;
 		}
 		a:hover {
-			background-color: lighten($bch-orange, 10%);
+			background-color: lighten($theme-color-1, 10%);
 		}
 	}
 	.headline {
@@ -2163,13 +2253,13 @@ nav {
 		margin: 20px 0 5px 0;
 		.button {
 			border-radius: 0;
-			background-color: $bch-orange;
+			background-color: $theme-color-1;
 			padding: 8px 15px;
 			min-height: 0;
 			font-size: 12px;
 		}
 		.button:hover {
-			background-color: lighten($bch-orange, 10%);
+			background-color: lighten($theme-color-1, 10%);
 		}
 	}
 }
@@ -2186,7 +2276,7 @@ nav {
 	}
 	.button {
 		border-radius: 0;
-		background-color: $bch-orange;
+		background-color: $theme-color-1;
 		font-size: 18px;
 	}
 }
@@ -2197,7 +2287,7 @@ nav {
 	padding-bottom: 0;
 }
 .footer {
-	background: url("cartographer.jpg") repeat-x $bch-grey;
+	background: url("cartographer.jpg") repeat-x $theme-color-2;
 }
 footer {
 	background-color: transparent;
@@ -2231,20 +2321,20 @@ footer {
 		.button {
 			font-size: 18px;
 			font-weight: 300;
-			background-color: $bch-orange;
+			background-color: $theme-color-1;
 			border-radius: 0;
 			padding: 10px 35px;
 			&:last-child {
 				margin-left: 35px;
 			}
 			&:hover {
-				background-color: lighten($bch-orange, 10%);
+				background-color: lighten($theme-color-1, 10%);
 			}
 		}
 	}
 }
 .footer_top {
-	background: $bch-grey2;
+	background: $theme-color-2;
 	min-height: 110px;
 	color: white;
 	.width-container {
@@ -2308,7 +2398,7 @@ footer {
 		}
 	}
 	h2.headline {
-		color: $bch-orange;
+		color: $theme-color-1;
 		font-size: 30px;
 		text-transform: uppercase;
 	}
@@ -2498,8 +2588,8 @@ footer {
 }
 
 /* IE10+ specific styles */
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {  
-	
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+
 	@media(max-width:1024px) {
 		#tabs {
 			margin-top: -73px;
@@ -2520,9 +2610,9 @@ footer {
 }
 
 /* ipad styles */
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) 
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
 and (orientation : landscape) {
 	.tabs {
     margin-top: -75px !important;

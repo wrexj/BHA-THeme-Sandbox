@@ -1,7 +1,11 @@
 /* ===================================================================================
+
+  BHA Sandbox
+  Tablet and desktop.scss
+
    This is the tablet and desktop stylesheet. It applies to viewports above 768px.
    For the mobile first stylesheet which applies to all screen widths, see theme.scss.
- 
+
 DJM - Added BCH-Grey color to features
 
 =================================================================================== */
@@ -9,26 +13,65 @@ DJM - Added BCH-Grey color to features
 //* style variables *//
 
 // headline font
-$headline-font: 'Montserrat', Helvetica, sans-serif;
+$headline-font: "Bree Serif", serif;
+
+// alternative headline font
+$headline-font-alt: "Bree Serif", sans-serif;
 
 // main font
-$font: 'Montserrat', sans-serif;
+$font: "Lato", sans-serif;
 
-$theme-color-1: #b85812;
-$theme-color-2: #e0d6c8;
-$theme-color-3: #cc6633;
-$theme-color-4: #516e16;
+$brown: #766341;
+$burgundy: #601B28;
+$orange: #c63;
+$turquoise: #53cfd7;
+$tan: #d4c89e;
+$grey: #ccc;
+$ltgrey: #f2f2f2;
+$charcoal: #656565;
+$red: #f93c04;
+$green: #5C8726;
+$bhagreen: #708770;
+$black: #000;
+$white: #fff;
+$facebook: #3b5998;
+$twitter: #00aced;
+
+$onecolumn-bg: $white ;
+$twocolumn-color: $black;
+
+$site-bg: #6E9BC5;
+$site-color: $black;
+$desktop-site-bg: #6E9BC5;
+$desktop-site-color: $black;
+
+$theme-color-1: $bhagreen;
+$theme-color-2: $burgundy;
+$theme-color-3: $tan;
+$theme-color-4: $site-bg;
+
+//Featured Content Slider
+$flex-color: $white;
+$flex-background: transparent;
+$features-headline-color: $white;
+
+$icon-button-bg: $orange;
+
+$nav-hover: $green;
+$nav-hover-color: $white;
+$nav-background: $bhagreen;
+$subnav-background: $bhagreen;
+$nav-color: $white;
+$nav-container-border: 0;
+
 
 // general success and error colors
 $red: #b94a48;
 $green: #619114;
 
 // custom colors
-$bch-orange: #cc6633;
-$bch-grey: #343434;
-$bch-grey2: #403f3f;
-$bch-grey3: #f2f2f2;
-$bch-maroon: #601b28;
+
+
 
 
 // border-radius mixin
@@ -48,7 +91,7 @@ $bch-maroon: #601b28;
 .twocolumn-container {
   margin-bottom: 20px;
   .left-column, .right-column-wide {
-    background-color: #fff;
+    //background-color: $tan;
     padding: 20px;
     @include border-radius(2px);
     float: left;
@@ -63,6 +106,7 @@ $bch-maroon: #601b28;
     width: 27.214424951267%;
     // 310px ÷ 1026px
     margin-bottom: 0;
+    //background-color: $tan;
   }
   .right-column-wide {
     margin-right: 0;
@@ -160,7 +204,7 @@ footer {
 }
 
 // top nav with drop downs
-/*
+
 .inner-page {
   .tablet-visible + .desktop-visible {
     position: absolute;
@@ -174,18 +218,16 @@ footer {
     }
   }
 }
-*/
 
 nav, .subnav {
-  background-color: transparent;
+  background-color: $nav-background;
   border-right: 0;
   border-top: 0;
-  float: right;
   height: auto;
-  max-width: 80.2261208577%;
+//  max-width: 80.2261208577%;
   margin-top: 25px;
   // 700px ÷ 1026px
-  margin-left: 1.949317738791%;
+//  margin-left: 1.949317738791%;
   // 20px ÷ 1026px
   position: static;
   width: auto;
@@ -200,7 +242,7 @@ nav, .subnav {
     display: inline-block;
     margin: 0;
     position: relative;
-    background-color: transparent;
+    background-color: $subnav-background;
     border: none;
     line-height: 45px;
     a {
@@ -211,17 +253,17 @@ nav, .subnav {
       padding: 0 10px;
       font-size: 16px;
       .icon-angle-down {
-        display: none;
-      }
+				display: none;
+			}
     }
     &:last-child {
       margin-right: 0;
     }
     &:hover, &.active{
       border-color: transparent;
-      background-color: transparent;
+      background-color: $nav-hover;
       a {
-        color: #fff;
+        color: $nav-hover-color;
       }
     }
   }
@@ -231,7 +273,7 @@ nav, .subnav {
     top: 44px;
     left: 0px;
     z-index: 99999;
-    background-color: $bch-orange;
+    background-color: $subnav-background;
     padding: 8px 0 5px 0;
     @include border-radius-top-right(2px);
     @include border-radius-bottom-left(2px);
@@ -242,11 +284,11 @@ nav, .subnav {
   .sub li {
     width: 100%;
     border: none;
-    color: $theme-color-2;
+    color: $nav-color;
     font-size: 13px;
     line-height: 18px;
     display: block;
-    background-color: $bch-orange;
+    background-color: $subnav-background;
     border-color:transparent;
     @include border-radius(0);
 
@@ -259,7 +301,7 @@ nav, .subnav {
     padding: 5px 20px 5px 22px;
 
     &:hover {
-      background-color: darken($bch-orange, 10);
+      background-color: $nav-hover;
       text-decoration: none;
     }
   }
@@ -274,6 +316,9 @@ nav, .subnav {
   clear: both;
   font-size: 13px;
   max-width: 100%;
+  li{
+    margin-bottom: 13px;
+  }
 }
 
 .desktop-nav {
@@ -402,9 +447,10 @@ ul.membership-list {
   margin: 0 0 50px 0;
   .features-headline {
     font-size: 20px;
+    font-weight: bold;
     padding: 15px;
     /* DJM Added Color and Background */
-    color: $bch-grey3;
+    color: $features-headline-color;
     background: transparent;
   }
 }
@@ -423,7 +469,7 @@ ul.membership-list {
     content: " ";
     height: 74px;
     width: 34px;
-    background: url('arrow-left.png') no-repeat; 
+    background: url('arrow-left.png') no-repeat;
   }
 }
 
@@ -437,7 +483,7 @@ ul.membership-list {
     content: " ";
     height: 74px;
     width: 34px;
-    background: url('arrow-right.png') no-repeat; 
+    background: url('arrow-right.png') no-repeat;
   }
 }
 
@@ -514,7 +560,7 @@ ul#page-stream {
   li.activity  {
     span + a {
     display: inline;
-    } 
+    }
   }
   .activity-time {
     display: inline;
@@ -547,10 +593,12 @@ ul#page-stream {
       padding: 0;
       @include border-radius(0);
       line-height: 21px;
-      background: transparent;
-      border-bottom: none;
       &.active, &.drop {
-        background-color: transparent;
+        background-color: $theme-color-4;
+        border-bottom: 1px solid darken($theme-color-4, 15);
+        & > a {
+          color: #fff;
+        }
       }
       a {
         padding: .8em;
@@ -561,12 +609,14 @@ ul#page-stream {
       width: 100%;
       padding: 0;
       li {
-        background-color: lighten(#454545, 10);
+        border-bottom: 1px solid darken($theme-color-4, 15);
+        background-color: darken($theme-color-4, 5);
         &:last-child {
           margin-bottom: 0;
         }
         a {
           padding: 12px;
+          color: #ccc;
         }
         &.mobile-visible {
           display: block;
@@ -598,9 +648,14 @@ ul#page-stream {
     display: block;
   }
 
-  header {
-    padding: 28px 0 0 0;
+ header {
+    padding: 24px 0;
     max-width: 78%;
+    @each $current-headline-font in $headline-font {
+      @if $current-headline-font == 'Josefin Sans' {
+        padding-top: 31px;
+      }
+    }
   }
 
 // replaces the subnav with breadcrumbs, as dropdowns don't work in touch devices
@@ -667,5 +722,4 @@ ul#page-stream {
       }
     }
   }
-
 }

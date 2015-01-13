@@ -1,5 +1,5 @@
 <div class="twocolumn-container clearfix">
-	
+
   <div class="left-column">
 
     {{ content_for_notifications }}
@@ -12,6 +12,22 @@
   <!-- .left_column -->
 
   <div class="right-column">
+
+  {% if site.has_signup_page? %}
+    {% include "signup_form" with site.signup_page %}
+    {% endif %}
+
+    {% if site.has_button1? %}
+    <a class="button supporter-nav-button" href="{{ site.button1_page.full_url_with_profile_recruiter }}">{{ site.button1_text }}</a>
+    {% endif %}
+
+    {% if site.has_button2? %}
+    <a class="button supporter-nav-button" href="{{ site.button2_page.full_url_with_profile_recruiter }}">{{ site.button2_text }}</a>
+    {% endif %}
+
+    {% if site.has_button3? %}
+    <a class="button supporter-nav-button" href="{{ site.button3_page.full_url_with_profile_recruiter }}">{{ site.button3_text }}</a>
+    {% endif %}
 
     {% if request.logged_in? %}
 
@@ -41,9 +57,9 @@
     {% if site.has_button3? %}
     <a class="button supporter-nav-button" href="{{ site.button3_page.full_url_with_profile_recruiter }}">{{ site.button3_text }}</a>
     {% endif %}
-    
+
     {% subpage "sidebar" with "sidebar_latest" %}
-    
+
     <div class="social-side">
     	<h2>Connect with us!</h2>
     	<ul>
