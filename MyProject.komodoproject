@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- Komodo Project File - DO NOT EDIT -->
-<project id="5edef614-f344-40ad-8604-d342965b1250" kpf_version="5" name="MyProject.komodoproject">
-<preference-set idref="5edef614-f344-40ad-8604-d342965b1250" id="project" preftype="project">
-  <string relative="path" id="import_dirname"></string>
-  <string id="import_include_matches">*.html; *.scss</string>
-</preference-set>
-</project>
