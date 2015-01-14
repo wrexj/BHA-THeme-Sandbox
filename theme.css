@@ -55,10 +55,10 @@ $twitter: #00aced;
 $header-color: #fff;
 $header-text-color: #000;
 
-$site-bg: $ltgrey;
-$site-color: $black;
-$desktop-site-bg: $ltgrey;
-$desktop-site-color: $black;
+$site-bg: #6E9BC5;
+$site-color: $white;
+$desktop-site-bg: #6E9BC5;
+$desktop-site-color: $white;
 
 // custom colors
 $theme-color-1: $bhagreen;
@@ -935,7 +935,7 @@ footer {
 }
 
 .supporter-nav-button {
-  margin: 5px 0;
+  margin: 10px 0;
   text-align: center;
   font-size: 18px;
   width: 100%;

@@ -23,6 +23,7 @@ $font: "Lato", sans-serif;
 
 $brown: #766341;
 $burgundy: #601B28;
+$blue: #3A6F8F;
 $orange: #c63;
 $turquoise: #53cfd7;
 $tan: #d4c89e;
@@ -40,15 +41,15 @@ $twitter: #00aced;
 $onecolumn-bg: $white ;
 $twocolumn-color: $black;
 
-$site-bg: #6E9BC5;
+$site-bg: $white;
 $site-color: $black;
-$desktop-site-bg: #6E9BC5;
+$desktop-site-bg: $white;
 $desktop-site-color: $black;
 
-$theme-color-1: $bhagreen;
-$theme-color-2: $burgundy;
-$theme-color-3: $tan;
-$theme-color-4: $site-bg;
+$theme-color-1: $red;
+$theme-color-2: $blue;
+$theme-color-3: $green;
+$theme-color-4: $turquoise;
 
 //Featured Content Slider
 $flex-color: $white;
